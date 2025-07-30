@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -313,6 +314,12 @@
             background-color: var(--secondary);
             border-radius: 12px;
             border-left: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+        
+        .education-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
         
         .education-section h4 {
@@ -439,18 +446,7 @@
             overflow: hidden;
             transition: var(--transition);
             position: relative;
-            border: 1px solid rgba(232, 232, 234, 0.05);
-        }
-        
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.8));
-            z-index: 1;
+            border: 1px solid rgba(232, 232, 234, 0.1);
         }
         
         .project-card:hover {
@@ -458,46 +454,43 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
         
-        .project-image {
-            height: 240px;
-            overflow: hidden;
-        }
-        
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-        }
-        
-        .project-card:hover .project-image img {
-            transform: scale(1.08);
-        }
-        
-        .project-info {
+        .project-content {
             padding: 2rem;
-            position: relative;
-            z-index: 2;
         }
         
-        .project-info h3 {
-            font-size: 1.4rem;
+        .project-title {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .project-title i {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .project-description {
+            color: var(--light-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
         
         .project-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.6rem;
+            gap: 0.8rem;
             margin-bottom: 1.5rem;
         }
         
         .project-tag {
-            background-color: var(--primary);
+            background-color: rgba(127, 90, 240, 0.2);
             color: var(--light);
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
             font-weight: 500;
         }
         
@@ -509,20 +502,15 @@
         .project-links a {
             color: var(--light);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-weight: 500;
             display: flex;
             align-items: center;
             gap: 0.5rem;
             transition: var(--transition);
-            font-weight: 500;
         }
         
         .project-links a:hover {
             color: var(--accent);
-        }
-        
-        .project-links a i {
-            font-size: 1.1rem;
         }
         
         /* Contact Section */
@@ -737,10 +725,6 @@
                 grid-template-columns: 1fr;
                 gap: 4rem;
             }
-            
-            .project-image {
-                height: 200px;
-            }
         }
         
         @media (max-width: 768px) {
@@ -826,6 +810,11 @@
                 width: 250px;
                 height: 250px;
             }
+            
+            .project-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -864,7 +853,7 @@
             </div>
             
             <div class="hero-image">
-                <img src="image\portfolio-pic3.png" alt="My Image - Data Analyst" loading="lazy">
+                <img src="image\portfolio-pic3.png" alt="Sadeeq Ullah - Data Analyst" loading="lazy">
             </div>
         </div>
     </section>
@@ -885,7 +874,6 @@
                         <li><strong>ETL & Data Wrangling</strong> – Proficient in cleaning, preprocessing, and transforming large datasets for accuracy.</li>
                         <li><strong>Artificial Intelligence (AI)</strong> – Experienced in leveraging AI tools and techniques to analyze data, build predictive models, and automate workflows.</li>
                         <li><strong>Python with AI</strong> – Skilled in using Python effectively with the help of AI tools and techniques to analyze data, build models, and automate processes.</li>
-
                         <li><strong>Business Impact</strong> – Delivered 20%+ improvements in sales forecasting, revenue projections, and operational efficiency.</li>
                     </ul>
                     
@@ -917,418 +905,384 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="image/portfolio-pic.png" alt="My Image - Professional Photo" loading="lazy">
+                    <img src="image/portfolio-pic.png" alt="Sadeeq Ullah - Professional Photo" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Portfolio</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f5f5f5;
-            margin: 0;
-            padding: 20px;
-        }
-        .section {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 40px;
-            color: #333;
-        }
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-        }
-        .project-card {
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            color: #0d47a1;
-            transition: transform 0.3s;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-        .project-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-        .project-title i {
-            margin-right: 12px;
-            font-size: 28px;
-        }
-        .project-description {
-            font-size: 15px;
-            margin-bottom: 20px;
-            color: #1a237e;
-            line-height: 1.5;
-        }
-        .project-skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .skill-tag {
-            background: rgba(255, 255, 255, 0.7);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 500;
-        }
-        .view-project {
-            display: inline-block;
-            background: #0d47a1;
-            color: white;
-            padding: 10px 18px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: background 0.3s;
-        }
-        .view-project:hover {
-            background: #1565c0;
-        }
-        .view-project i {
-            margin-right: 8px;
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <section class="section">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle" style="max-width: 700px; margin: 0 auto 3rem; text-align: center;">
+                A showcase of my data analysis projects demonstrating my skills in SQL, Power BI, Excel, and data visualization.
+            </p>
             
-            <!-- Project 1 -->
-            <div class="project-card">
-                <div class="project-title">
-                    <i class="fas fa-chart-bar"></i> Supermarket Sales Analysis
+            <div class="projects-grid">
+                <!-- Project 1 - Supermarket Sales Analysis -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title"><i class="fas fa-shopping-cart"></i> Supermarket Sales Analysis</h3>
+                        <p class="project-description">
+                            Comprehensive analysis of supermarket sales data to identify trends, customer behavior, and product performance. Created interactive dashboards to help management make inventory and pricing decisions.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Power BI</span>
+                            <span class="project-tag">Data Visualization</span>
+                            <span class="project-tag">Sales Analysis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://1drv.ms/x/c/fb8774ab5e34658e/EbnWuxdSAdpMtM5rdjg7XvYB-1cYM-baex0nbdwS7eYJ-Q?e=qKjZOA" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-description">
-                    Analyzed supermarket sales data to uncover trends and improve inventory management strategies, resulting in 15% cost reduction.
+                
+                <!-- Project 2 - Walmart Sales Analysis -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title"><i class="fas fa-store"></i> Walmart Sales Analysis</h3>
+                        <p class="project-description">
+                            Analyzed Walmart sales data using SQL for data extraction and Power BI for visualization. Identified regional sales patterns and seasonal trends to optimize inventory management.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">SQL</span>
+                            <span class="project-tag">Power BI</span>
+                            <span class="project-tag">Data Modeling</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://1drv.ms/p/c/fb8774ab5e34658e/EbKDXLaFgjFNgkJTLQDL_lQB2U2KezyUqi3-7T_H4CPJJQ?e=afdFfL" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-skills">
-                    <span class="skill-tag">Power BI</span>
-                    <span class="skill-tag">Excel</span>
-                    <span class="skill-tag">Data Analysis</span>
+                
+                <!-- Project 3 - Power BI Dashboard -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title"><i class="fas fa-chart-line"></i> Power BI Dashboard</h3>
+                        <p class="project-description">
+                            Interactive Power BI dashboard with multiple data sources, advanced visualizations, and drill-down capabilities. Provides real-time business insights with KPIs and performance metrics.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Power BI</span>
+                            <span class="project-tag">Dashboard</span>
+                            <span class="project-tag">Business Intelligence</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://1drv.ms/u/c/fb8774ab5e34658e/ESmqIZX_P6dJhK621x2WkBMB37fcPa02lG9HzFq37qsM-g?e=AILZI9" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <a href="https://1drv.ms/x/c/fb8774ab5e34658e/EbnWuxdSAdpMtM5rdjg7XvYBc2RX601VWPEg59G6-dnd3g?e=QCLdmq" target="_blank" class="view-project">
-                    <i class="fas fa-external-link-alt"></i> View Project
-                </a>
-            </div>
-            
-            <!-- Project 2 -->
-            <div class="project-card" style="background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%); color: #5d4037;">
-                <div class="project-title">
-                    <i class="fas fa-store"></i> Walmart Sales Analysis
+                
+                <!-- Project 4 - Excel Data Analysis -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title"><i class="fas fa-file-excel"></i> Excel Data Analysis</h3>
+                        <p class="project-description">
+                            Advanced Excel project featuring data cleaning, pivot tables, and dynamic charts. Automated reporting process for large datasets with macros and advanced formulas.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Excel</span>
+                            <span class="project-tag">Pivot Tables</span>
+                            <span class="project-tag">Data Cleaning</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://1drv.ms/x/c/fb8774ab5e34658e/EaFqyG_PtMxBlPAv_hhwBpEBYqYe8CGF2w9rK7UOW_P_Qw?e=uYpDHp" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-description" style="color: #3e2723;">
-                    Optimized SQL queries and identified regional sales patterns to boost profitability by 12% through targeted marketing strategies.
+                
+                <!-- Project 5 - Excel Analytics Dashboard -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title"><i class="fas fa-table"></i> Excel Analytics Dashboard</h3>
+                        <p class="project-description">
+                            Comprehensive Excel dashboard with real-time data tracking, conditional formatting, and summary visualizations. Features dynamic filtering and interactive elements for data exploration.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Excel</span>
+                            <span class="project-tag">Dashboard</span>
+                            <span class="project-tag">Data Visualization</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://1drv.ms/x/c/fb8774ab5e34658e/EcnsfLD5D91IqIMI4y_ZgSoBDXM1adjQvI-LwpfcxhGaPw?e=BOHAOR" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-skills">
-                    <span class="skill-tag" style="background: rgba(255, 255, 255, 0.8);">SQL</span>
-                    <span class="skill-tag" style="background: rgba(255, 255, 255, 0.8);">Power BI</span>
-                    <span class="skill-tag" style="background: rgba(255, 255, 255, 0.8);">Data Visualization</span>
+                
+                <!-- Project 6 - Power BI Business Insights -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title"><i class="fas fa-business-time"></i> Power BI Business Insights</h3>
+                        <p class="project-description">
+                            End-to-end Power BI solution with full data modeling, interactive slicers, and business KPI tracking. Provides actionable insights for strategic decision making.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Power BI</span>
+                            <span class="project-tag">Business Intelligence</span>
+                            <span class="project-tag">Data Modeling</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://1drv.ms/u/c/fb8774ab5e34658e/Eb94Q6ENY31LsloHT3rvqKYBAO1gQXf72gBhGyUj3ncmrw?e=hPvkSI" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <a href="https://1drv.ms/p/c/fb8774ab5e34658e/EbKDXLaFgjFNgkJTLQDL_lQBoxJH0YUw4W72oElqxWqkxw?e=Ocd3cG" target="_blank" class="view-project" style="background: #5d4037;">
-                    <i class="fas fa-external-link-alt"></i> View Project
-                </a>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-card" style="background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); color: #4a148c;">
-                <div class="project-title">
-                    <i class="fas fa-chart-pie"></i> Power BI Dashboard
-                </div>
-                <div class="project-description" style="color: #12005e;">
-                    An interactive Power BI dashboard showcasing data visualization and business insights with KPIs and drill-down analysis.
-                </div>
-                <div class="project-skills">
-                    <span class="skill-tag" style="background: rgba(255, 255, 255, 0.7);">Power BI</span>
-                    <span class="skill-tag" style="background: rgba(255, 255, 255, 0.7);">Dashboards</span>
-                </div>
-                <a href="https://1drv.ms/u/c/fb8774ab5e34658e/ESmqIZX_P6dJhK621x2WkBMB37fcPa02lG9HzFq37qsM-g?e=AILZI9" target="_blank" class="view-project" style="background: #4a148c;">
-                    <i class="fas fa-external-link-alt"></i> View Project
-                </a>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="project-card" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); color: #2e7d32;">
-                <div class="project-title">
-                    <i class="fas fa-file-excel"></i> Excel Data Analysis
-                </div>
-                <div class="project-description" style="color: #1b5e20;">
-                    Advanced Excel project with pivot tables, data cleaning, and dynamic charts to automate large dataset reporting.
-                </div>
-                <div class="project-skills">
-                    <span class="skill-tag" style="background: rgba(255, 255, 255, 0.7);">Excel</span>
-                    <span class="skill-tag" style="background: rgba(255, 255, 255, 0.7);">Data Cleaning</span>
-                    <span class="skill-tag" style="background: rgba(255, 255, 255, 0.7);">Pivot Tables</span>
-                </div>
-                <a href="https://1drv.ms/x/c/fb8774ab5e34658e/EaFqyG_PtMxBlPAv_hhwBpEBYqYe8CGF2w9rK7UOW_P_Qw?e=uYpDHp" target="_blank" class="view-project" style="background: #2e7d32;">
-                    <i class="fas fa-external-link-alt"></i> View Project
-                </a>
-            </div>
-
-            <!-- Project 5 -->
-            <div class="project-card" style="background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%); color: #006064;">
-                <div class="project-title">
-                    <i class="fas fa-table"></i> Excel Analytics Dashboard
-                </div>
-                <div class="project-description" style="color: #00838f;">
-                    Comprehensive Excel analytics dashboard with real-time tracking, conditional formatting, and summary visualizations.
-                </div>
-                <div class="project-skills">
-                    <span class="skill-tag" style="background: rgba(255, 255, 255, 0.7);">Excel</span>
-                    <span class="skill-tag" style="background: rgba(255, 255, 255, 0.7);">Dashboards</span>
-                    <span class="skill-tag" style="background: rgba(255, 255, 255, 0.7);">Analytics</span>
-                </div>
-                <a href="https://1drv.ms/x/c/fb8774ab5e34658e/EcnsfLD5D91IqIMI4y_ZgSoBDXM1adjQvI-LwpfcxhGaPw?e=BOHAOR" target="_blank" class="view-project" style="background: #006064;">
-                    <i class="fas fa-external-link-alt"></i> View Project
-                </a>
-            </div>
-
-            <!-- Project 6 -->
-            <div class="project-card" style="background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%); color: #4527a0;">
-                <div class="project-title">
-                    <i class="fas fa-business-time"></i> Power BI Business Insights
-                </div>
-                <div class="project-description" style="color: #311b92;">
-                    Power BI project with full data modeling, interactive slicers, and business KPI tracking to support decision making.
-                </div>
-                <div class="project-skills">
-                    <span class="skill-tag" style="background: rgba(255, 255, 255, 0.7);">Power BI</span>
-                    <span class="skill-tag" style="background: rgba(255, 255, 255, 0.7);">Business Intelligence</span>
-                    <span class="skill-tag" style="background: rgba(255, 255, 255, 0.7);">Data Modeling</span>
-                </div>
-                <a href="https://1drv.ms/u/c/fb8774ab5e34658e/ESmqIZX_P6dJhK621x2WkBMB37fcPa02lG9HzFq37qsM-g?e=AILZI9" target="_blank" class="view-project" style="background: #4527a0;">
-                    <i class="fas fa-external-link-alt"></i> View Project
-                </a>
             </div>
         </div>
     </section>
-</body>
-</html>
 
     <!-- Resume Section -->
     <section id="resume" class="section resume-section">
         <div class="container">
             <h2 class="section-title">Professional Experience</h2>
-            <p class="section-subtitle" style="max-width: 700px; margin: 0 auto 3rem; text-align: center;">
-                My journey in data analytics and the value I've delivered through my work.
-            </p>
-            
-            <div class="resume-content">
-                <div class="experience-item">
-                    <h3>Data Analyst Intern | Sales Trends Analysis (Freelance Project)</h3>
-                    <span class="date">September 2024 – November 2024</span>
-                    <ul>
-                        <li>Performed sales forecasting analysis, increasing revenue projection accuracy by 20% through advanced statistical models</li>
-                        <li>Extracted, transformed, and loaded (ETL) large datasets from multiple sources, reducing data inconsistencies by 35%</li>
-                        <li>Developed automated SQL queries that improved revenue trend identification efficiency by 15%</li>
-                        <li>Created dynamic Power BI reports with drill-down capabilities, enhancing stakeholder understanding by 40%</li>
-                        <li>Discovered actionable business insights through cohort analysis that led to a 10% increase in sales</li>
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <h3>Data Analyst Intern | Sunvave Project (Academic/Personal Initiative)</h3>
-                    <span class="date">June 2024 – August 2024</span>
-                    <ul>
-                        <li>Conducted comprehensive data-driven trend analysis that improved decision-making efficiency by 30%</li>
-                        <li>Developed optimized SQL queries that reduced report generation time by 40% through query optimization</li>
-                        <li>Designed interactive Power BI dashboards with real-time data refresh, enhancing data-driven insights by 50%</li>
-                        <li>Optimized ETL pipelines using Python scripts, increasing data accuracy by 25% and improving workflow efficiency</li>
-                    </ul>
-                </div>
+            <p class="section-subtitle" style="max-width: 700px; margin: 0 auto 3rem
+                  <div class="resume-content">
+            <!-- Experience 1 -->
+            <div class="experience-item">
+                <h3>Data Analyst | Freelance</h3>
+                <span class="date">2023 - Present</span>
+                <ul>
+                    <li>Developed interactive Power BI dashboards for clients in retail and e-commerce, resulting in 25% faster decision-making processes</li>
+                    <li>Automated data collection and reporting processes using Python scripts, reducing manual work by 15+ hours per week</li>
+                    <li>Performed complex data analysis using SQL queries to identify customer behavior patterns and sales trends</li>
+                    <li>Created predictive models in Excel to forecast sales with 92% accuracy, helping clients optimize inventory management</li>
+                    <li>Transformed raw data into actionable insights through comprehensive data cleaning and visualization techniques</li>
+                </ul>
             </div>
             
-            <div style="text-align: center; margin-top: 4rem;">
-                <a href="https://1drv.ms/b/c/fb8774ab5e34658e/EW5ADaezgNFCgwPjtYiHsyYBeeaQrli4MVeYRVK_mJh2OA?e=imlAi2" class="btn" target="_blank">
-                    <i class="fas fa-download"></i> Download Full Resume
-                </a>
+            <!-- Experience 2 -->
+            <div class="experience-item">
+                <h3>Mathematics Tutor | Self-Employed</h3>
+                <span class="date">2020 - 2023</span>
+                <ul>
+                    <li>Applied data analysis techniques to track student performance and optimize teaching strategies</li>
+                    <li>Developed custom progress tracking systems using Excel with advanced formulas and visualizations</li>
+                    <li>Analyzed test results to identify knowledge gaps and tailor individual learning plans</li>
+                    <li>Created data-driven study schedules that improved student outcomes by an average of 30%</li>
+                </ul>
             </div>
-        </div>
-    </section>
-    
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <div class="info-content">
-                            <h4>Email</h4>
-                            <a href="mailto:sadeequllah.data@gmail.com">sadeequllah.data@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <div class="info-content">
-                            <h4>Phone</h4>
-                            <p>+92 309 26479</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div class="info-content">
-                            <h4>Location</h4>
-                            <p>KPK, Dera Ismail Khan, Pakistan</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fab fa-linkedin-in"></i>
-                        <div class="info-content">
-                            <h4>LinkedIn</h4>
-                            <a href="https://www.linkedin.com/in/sadeequllah-073304303" target="_blank">linkedin.com/in/sadeequllah-073304303</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm" netlify>
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message <i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#resume">Experience</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <p class="copyright">© <span id="year"></span> Sadeeq Ullah. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <script>
-        // Current year for copyright
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Back to top button
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('active');
-            } else {
-                backToTop.classList.remove('active');
-            }
-        });
-
-        backToTop.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Animation on scroll
-        const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.hero h1, .hero h2, .hero h3, .hero p, .social-links, .btn, .about-text, .about-image, .project-card, .contact-info, .contact-form, .experience-item');
             
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
+            <!-- Experience 3 -->
+            <div class="experience-item">
+                <h3>Data Analysis Intern | CodeAlpha</h3>
+                <span class="date">2023 (3 months)</span>
+                <ul>
+                    <li>Completed intensive training in data cleaning, analysis, and visualization techniques</li>
+                    <li>Worked on real-world datasets to create reports and dashboards for business stakeholders</li>
+                    <li>Collaborated with team members on data projects using version control (Git)</li>
+                    <li>Presented findings to senior analysts with clear visualizations and actionable recommendations</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle" style="max-width: 700px; margin: 0 auto 3rem; text-align: center;">
+            Have a data challenge or opportunity? I'd love to hear about it. Let's connect and discuss how I can help transform your data into business value.
+        </p>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
                 
-                if (elementPosition < windowHeight - 100) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            });
-        };
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="info-content">
+                        <h4>Email</h4>
+                        <a href="mailto:sadeequllah.data@gmail.com">sadeequllah.data@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="info-content">
+                        <h4>Phone</h4>
+                        <a href="tel:+923115303303">+92 311 5303303</a>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="info-content">
+                        <h4>Location</h4>
+                        <p>Dera Ismail Khan, Pakistan</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="info-content">
+                        <h4>Availability</h4>
+                        <p>Monday - Friday: 9am - 5pm</p>
+                        <p>Weekends: By appointment</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form id="contactForm" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
-        // Run on page load and scroll
-        window.addEventListener('scroll', animateOnScroll);
-        animateOnScroll();
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <a href="#" class="logo" style="margin-bottom: 2rem;"><i class="fas fa-chart-line"></i> Sadeeq Ullah</a>
+            
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#resume">Experience</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+            <div class="social-links" style="justify-content: center; margin-bottom: 2rem;">
+                <a href="https://www.linkedin.com/in/sadeequllah-073304303" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/sadeequllah" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:sadeequllah.data@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            
+            <p class="copyright">© 2023 Sadeeq Ullah. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                // Add your form submission logic here
-                alert('Thank you for your message! I will get back to you soon.');
-                this.reset();
-            });
+<!-- Back to Top Button -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- JavaScript -->
+<script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
         }
-    </script>
-</body>
-</html>
+    });
+
+    // Back to top button
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('active');
+        } else {
+            backToTopBtn.classList.remove('active');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Form submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just log it and show an alert
+            console.log({ name, email, subject, message });
+            
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        });
+    }
+
+    // Animation on scroll
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.experience-item, .project-card, .info-item');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+            
+            if (elementPosition < screenPosition) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    // Set initial state for animated elements
+    document.querySelectorAll('.experience-item, .project-card, .info-item').forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+    });
+
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll)
