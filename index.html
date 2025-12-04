@@ -647,7 +647,7 @@
             margin-bottom: 1.5rem;
         }
         
-        /* Projects Section - UPDATED WITH CLICKABLE CARDS */
+        /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -752,7 +752,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.8rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
         
         .project-tag {
@@ -782,7 +782,6 @@
             position: relative;
             padding: 0.5rem 0;
             transition: gap 0.3s ease;
-            pointer-events: none;
         }
         
         .project-link::after {
@@ -802,42 +801,6 @@
         
         .project-link:hover::after {
             width: 100%;
-        }
-        
-        /* Download Instructions */
-        .download-instructions {
-            margin-top: 4rem;
-            padding: 2rem;
-            background: var(--glass);
-            border-radius: 20px;
-            border: 1px solid var(--glass-border);
-            text-align: center;
-        }
-        
-        .download-instructions h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .download-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .download-step {
-            padding: 1.5rem;
-            background: rgba(0, 212, 255, 0.05);
-            border-radius: 15px;
-            border: 1px solid rgba(0, 212, 255, 0.1);
-        }
-        
-        .download-step i {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
         }
         
         /* Education & Certifications */
@@ -1519,17 +1482,17 @@
         </div>
     </section>
     
-    <!-- Portfolio Section - UPDATED WITH CLICKABLE PROJECTS -->
+    <!-- Portfolio Section - UPDATED WITH GOOGLE DRIVE LINKS -->
     <section id="portfolio" class="section">
         <div class="container">
             <h2 class="section-title">Portfolio Projects</h2>
             <p class="section-subtitle">
-                Click on any project to download. Files will download directly to your device.
+                Click "View Project" to explore my data analysis work on Google Drive.
             </p>
             
             <div class="projects-grid">
                 <!-- Project 1 - Employee Data Analysis -->
-                <div class="project-card" onclick="downloadProject('employee_data_analysis', 'Employee Data Analysis', 'xlsx')">
+                <div class="project-card">
                     <div class="project-banner">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Employee Data Analysis">
                         <div class="project-icon">
@@ -1547,14 +1510,14 @@
                             <span class="project-tag">HR Analytics</span>
                             <span class="project-tag">Data Visualization</span>
                         </div>
-                        <div class="project-link">
-                            <i class="fas fa-download"></i> Click to Download Excel File
-                        </div>
+                        <a href="employee_data Analysis by sadeeq ullah.xlsx" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
                     </div>
                 </div>
                 
                 <!-- Project 2 - Bike Sales Dashboard -->
-                <div class="project-card" onclick="downloadProject('bike_sales_dashboard', 'Bike Sales Dashboard', 'xlsx')">
+                <div class="project-card">
                     <div class="project-banner">
                         <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Bike Sales Dashboard">
                         <div class="project-icon">
@@ -1572,14 +1535,14 @@
                             <span class="project-tag">Dashboard</span>
                             <span class="project-tag">Sales Analytics</span>
                         </div>
-                        <div class="project-link">
-                            <i class="fas fa-download"></i> Click to Download Excel File
-                        </div>
+                        <a href="Bike Sales Dashboard by sadeeq ullah.xlsx" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
                     </div>
                 </div>
                 
                 <!-- Project 3 - Supermarket Sales Analysis -->
-                <div class="project-card" onclick="downloadProject('supermarket_sales_analysis', 'Supermarket Sales Analysis', 'xlsx')">
+                <div class="project-card">
                     <div class="project-banner">
                         <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Supermarket Sales Analysis">
                         <div class="project-icon">
@@ -1597,14 +1560,14 @@
                             <span class="project-tag">Kaggle</span>
                             <span class="project-tag">Retail Analytics</span>
                         </div>
-                        <div class="project-link">
-                            <i class="fas fa-download"></i> Click to Download Excel File
-                        </div>
+                        <a href="supermarket_sales Data from kegagle.xlsx" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
                     </div>
                 </div>
                 
                 <!-- Project 4 - Adidas Sales Analysis -->
-                <div class="project-card" onclick="downloadProject('adidas_sales_analysis', 'Adidas Sales Analysis', 'pbix')">
+                <div class="project-card">
                     <div class="project-banner">
                         <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Adidas Sales Analysis">
                         <div class="project-icon">
@@ -1622,14 +1585,14 @@
                             <span class="project-tag">Sales Analysis</span>
                             <span class="project-tag">Business Intelligence</span>
                         </div>
-                        <div class="project-link">
-                            <i class="fas fa-download"></i> Click to Download Power BI File
-                        </div>
+                        <a href="Adidas Sales analysis by sadeeq ullah.pbix" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
                     </div>
                 </div>
                 
                 <!-- Project 5 - Professional Survey -->
-                <div class="project-card" onclick="downloadProject('professional_survey', 'Professional Survey Analysis', 'pbix')">
+                <div class="project-card">
                     <div class="project-banner">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Professional Survey">
                         <div class="project-icon">
@@ -1647,14 +1610,14 @@
                             <span class="project-tag">Survey Analysis</span>
                             <span class="project-tag">Data Visualization</span>
                         </div>
-                        <div class="project-link">
-                            <i class="fas fa-download"></i> Click to Download Power BI File
-                        </div>
+                        <a href="Profession survey by Sadeeq ullah.pbix" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
                     </div>
                 </div>
                 
                 <!-- Project 6 - Walmart Sales Analysis -->
-                <div class="project-card" onclick="downloadProject('walmart_sales_analysis', 'Walmart Sales Analysis', 'pptx')">
+                <div class="project-card">
                     <div class="project-banner">
                         <img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Walmart Sales Analysis">
                         <div class="project-icon">
@@ -1671,15 +1634,16 @@
                             <span class="project-tag">SQL</span>
                             <span class="project-tag">Excel</span>
                             <span class="project-tag">PowerPoint</span>
+                            <span class="project-tag">MySQL</span>
                         </div>
-                        <div class="project-link">
-                            <i class="fas fa-download"></i> Click to Download Presentation
-                        </div>
+                        <a href="walmart_sales_data_analysis using power point, excel,and mysql.pptx" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
                     </div>
                 </div>
                 
                 <!-- Project 7 - SQL Certification -->
-                <div class="project-card" onclick="downloadProject('sql_certification', 'SQL Certification Projects', 'pdf')">
+                <div class="project-card">
                     <div class="project-banner">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="SQL Certification">
                         <div class="project-icon">
@@ -1697,14 +1661,14 @@
                             <span class="project-tag">Database</span>
                             <span class="project-tag">Certification</span>
                         </div>
-                        <div class="project-link">
-                            <i class="fas fa-file-pdf"></i> Click to Download PDF
-                        </div>
+                        <a href="C:\Users\PMLS\Documents\30 Days SQL Micro Course Certificate Assignment Solution.pdf" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
                     </div>
                 </div>
                 
                 <!-- Project 8 - My CV -->
-                <div class="project-card" onclick="downloadProject('Data_analyst', 'Professional CV', 'pdf')">
+                <div class="project-card">
                     <div class="project-banner">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Professional CV">
                         <div class="project-icon">
@@ -1722,36 +1686,22 @@
                             <span class="project-tag">CV</span>
                             <span class="project-tag">Professional</span>
                         </div>
-                        <div class="project-link">
-                            <i class="fas fa-file-pdf"></i> Click to Download CV
-                        </div>
+                        <a href="Data_analyst (29).pdf" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
                     </div>
                 </div>
             </div>
             
-            <!-- Download Instructions -->
-            <div class="download-instructions">
-                <h3><i class="fas fa-info-circle"></i> How to Use These Files</h3>
-                <p style="color: var(--gray); margin-bottom: 1rem;">
-                    After downloading, open the files with the appropriate software:
+            <!-- Note about Google Drive -->
+            <div style="margin-top: 4rem; padding: 2rem; background: var(--glass); border-radius: 20px; border: 1px solid var(--glass-border); text-align: center;">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">
+                    <i class="fas fa-info-circle"></i> How to View Projects
+                </h3>
+                <p style="color: var(--gray); max-width: 600px; margin: 0 auto;">
+                    Click "View Project" to open files on Google Drive. You can view them online or download to your device.
+                    All files are shared with view-only access.
                 </p>
-                <div class="download-steps">
-                    <div class="download-step">
-                        <i class="fas fa-file-excel"></i>
-                        <h4>.xlsx Files</h4>
-                        <p>Open with Microsoft Excel or Google Sheets</p>
-                    </div>
-                    <div class="download-step">
-                        <i class="fas fa-chart-line"></i>
-                        <h4>.pbix Files</h4>
-                        <p>Open with Power BI Desktop (free from Microsoft)</p>
-                    </div>
-                    <div class="download-step">
-                        <i class="fas fa-file-pdf"></i>
-                        <h4>.pdf Files</h4>
-                        <p>Open with any PDF viewer (Adobe, Chrome, etc.)</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1819,7 +1769,7 @@
                         <a href="mailto:sadeequllah.data@gmail.com" class="social-link">
                             <i class="fas fa-envelope"></i>
                         </a>
-                        <a href="Data_analyst (29).pdf" class="social-link" download>
+                        <a href="Data_analyst (29).pdf" class="social-link" target="_blank">
                             <i class="fas fa-file-pdf"></i>
                         </a>
                     </div>
@@ -1840,7 +1790,7 @@
                 <div class="footer-col">
                     <h3>Resources</h3>
                     <ul>
-                        <li><a href="Data_analyst (29).pdf" download>Download CV</a></li>
+                        <li><a href="Data_analyst (29).pdf" target="_blank">View CV</a></li>
                         <li><a href="#portfolio">Project Portfolio</a></li>
                         <li><a href="#experience">Work Experience</a></li>
                         <li><a href="#skills">Technical Skills</a></li>
@@ -2007,113 +1957,23 @@
             });
         }
         
-        // Project Download Function
-        function downloadProject(filename, projectName, extension) {
-            const fullFilename = `${filename}.${extension}`;
-            
-            // Show loading notification
-            showNotification(`Preparing ${projectName} for download...`, 'info');
-            
-            // Try to create a download link
-            setTimeout(() => {
-                const link = document.createElement('a');
-                link.href = fullFilename;
-                link.download = fullFilename;
+        // Fix for local file paths (C:\ paths)
+        document.querySelectorAll('.project-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
                 
-                // Append to document and trigger click
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                
-                // Show success notification
-                showNotification(`${projectName} downloaded successfully!`, 'success');
-                
-                // Log the download
-                console.log(`Download initiated: ${fullFilename}`);
-                
-                // If download fails, show instructions
-                setTimeout(() => {
-                    if (!isFileDownloaded(fullFilename)) {
-                        showNotification(`If download didn't start, right-click and "Save link as"`, 'warning');
-                    }
-                }, 2000);
-            }, 500);
-        }
-        
-        function isFileDownloaded(filename) {
-            // This is a simple check - in a real scenario you'd need more sophisticated tracking
-            return false;
-        }
-        
-        function showNotification(message, type = 'info') {
-            // Remove existing notification
-            const existing = document.querySelector('.download-notification');
-            if (existing) {
-                existing.remove();
-            }
-            
-            // Create new notification
-            const notification = document.createElement('div');
-            notification.className = 'download-notification';
-            notification.innerHTML = `
-                <div style="
-                    position: fixed;
-                    top: 20px;
-                    right: 20px;
-                    background: ${type === 'success' ? 'var(--accent)' : type === 'warning' ? 'var(--secondary)' : 'var(--primary)'};
-                    color: white;
-                    padding: 1rem 1.5rem;
-                    border-radius: 10px;
-                    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-                    z-index: 10000;
-                    animation: slideInRight 0.3s ease;
-                    max-width: 300px;
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                ">
-                    <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'warning' ? 'exclamation-triangle' : 'info-circle'}" 
-                       style="font-size: 1.2rem;"></i>
-                    <div>
-                        <div style="font-size: 0.9rem;">${message}</div>
-                    </div>
-                    <i class="fas fa-times" 
-                       style="margin-left: auto; cursor: pointer; opacity: 0.7;"
-                       onclick="this.parentElement.parentElement.remove()"></i>
-                </div>
-            `;
-            
-            document.body.appendChild(notification);
-            
-            // Add CSS for animation if not already added
-            if (!document.querySelector('#notification-styles')) {
-                const style = document.createElement('style');
-                style.id = 'notification-styles';
-                style.textContent = `
-                    @keyframes slideInRight {
-                        from { transform: translateX(100%); opacity: 0; }
-                        to { transform: translateX(0); opacity: 1; }
-                    }
-                    @keyframes slideOutRight {
-                        from { transform: translateX(0); opacity: 1; }
-                        to { transform: translateX(100%); opacity: 0; }
-                    }
-                `;
-                document.head.appendChild(style);
-            }
-            
-            // Auto-remove after 5 seconds
-            setTimeout(() => {
-                if (notification.parentElement) {
-                    notification.style.animation = 'slideOutRight 0.3s ease';
-                    setTimeout(() => {
-                        if (notification.parentElement) {
-                            notification.remove();
-                        }
-                    }, 300);
+                // Check if it's a local file path (C:\)
+                if (href.startsWith('C:\\')) {
+                    e.preventDefault();
+                    const fileName = href.split('\\').pop();
+                    alert(`For local file paths, please contact me directly for the file: ${fileName}`);
+                    return false;
                 }
-            }, 5000);
-        }
+                
+                // For Google Drive links, they will open normally
+                return true;
+            });
+        });
         
         // Initialize on load
         window.addEventListener('load', () => {
@@ -2122,15 +1982,6 @@
             
             // Trigger counter animation after a delay
             setTimeout(animateCounters, 1000);
-        });
-        
-        // Download Tracking
-        document.querySelectorAll('a[download]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                const fileName = this.getAttribute('href');
-                console.log(`Downloading: ${fileName}`);
-                // Add analytics tracking here
-            });
         });
         
         // Parallax Effect
